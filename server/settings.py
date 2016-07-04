@@ -2,10 +2,18 @@
 import os
 
 class Config(object):
-    DEBUG = True
+    DEBUG = False
     SECRET_KEY = os.getenv('SECRET_KEY', 'replace_me_in_production')
 
-    WEBPACK_DEV_SERVER_HOSTNAME = os.getenv('WEBPACK_DEV_SERVER_HOSTNAME', 'localhost:8080')
-
     ITEMS_FILE = 'server/items.yaml'
+
+class ProdConfig(object):
+    APP_ENV = 'prod'
+
+class DevConfig(object):
+    APP_ENV = 'dev'
+
+    DEBUG = True
+
+    WEBPACK_DEV_SERVER_HOSTNAME = os.getenv('WEBPACK_DEV_SERVER_HOSTNAME', 'localhost:8080')
 

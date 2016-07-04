@@ -5,7 +5,10 @@ import os
 
 # Our libs
 from .app import create_app
-from .settings import Config
+from .settings import DevConfig
+from .settings import ProdConfig
 
-app = create_app(Config)
+env = os.getenv('APP_ENV', 'dev')
+config_class = ProdConfig if env == 'prod' else DevConfig
+app = create_app(config_class)
 
