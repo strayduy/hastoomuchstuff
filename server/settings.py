@@ -7,10 +7,10 @@ class Config(object):
 
     ITEMS_FILE = 'server/items.yaml'
 
-class ProdConfig(object):
+class ProdConfig(Config):
     APP_ENV = 'prod'
 
-class DevConfig(object):
+class DevConfig(Config):
     APP_ENV = 'dev'
 
     DEBUG = True
