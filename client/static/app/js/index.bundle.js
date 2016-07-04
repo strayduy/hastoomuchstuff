@@ -106,6 +106,11 @@
 	    transition.next();
 	});
 
+	// Track client-routed page views with Google Analytics
+	router.afterEach(function (transition) {
+	    ga('send', { hitType: 'pageview', page: transition.to.path });
+	});
+
 	// Routes
 	router.map({
 	    '/': {
@@ -28575,9 +28580,22 @@
 
 	            this.$broadcast('dibs-modal.show', data);
 	        },
-	        'claim-item': function claimItem(item) {
+	        'claim-item': function claimItem(data) {
+	            var item = data.item;
+	            var username = data.username;
+	            var comments = data.comments;
+
 	            this.claimed_items[item.id] = true;
 	            this.$broadcast('claim-item', item);
+
+	            var post_data = {
+	                item_id: item.id,
+	                item_name: item.name,
+	                username: username,
+	                comments: comments
+	            };
+
+	            this.$http.post('/claim-item', post_data, { emulateJSON: true }).then(function success(response) {}, function error(response) {});
 	        }
 	    },
 	    route: {
@@ -28591,6 +28609,7 @@
 	                });
 
 	                this.items = items;
+	                this.claimed_items = response.data.claimed_items;
 	            }, function error(response) {});
 	        }
 	    }
@@ -28655,7 +28674,13 @@
 	                return;
 	            }
 
-	            this.$dispatch('claim-item', this.item);
+	            var data = {
+	                item: this.item,
+	                username: this.username,
+	                comments: this.comments
+	            };
+
+	            this.$dispatch('claim-item', data);
 	            this.show_dibs_modal = false;
 	        }
 	    },
@@ -28763,12 +28788,12 @@
 	var BUTTON_TEXTS = ['dibs', 'gimme', 'want', 'yes plz'];
 
 	exports.default = {
-	    props: ['item'],
+	    props: ['item', 'has_been_claimed_init'],
 	    data: function data() {
 	        return {
 	            button_text: _lodash2.default.sample(BUTTON_TEXTS),
 	            is_compiled: false,
-	            has_been_claimed: false
+	            has_been_claimed: !!this.has_been_claimed_init
 	        };
 	    },
 
@@ -45227,7 +45252,7 @@
 /* 33 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<ui-preloader :show=\"$loadingRouteData\"></ui-preloader>\n<template v-if=\"!$loadingRouteData\">\n    <div class=\"container\">\n        <div class=\"page-header\">\n            <h1 class=\"text-center\">hey you take this free stuff</h1>\n        </div>\n\n        <template v-for=\"item in items\">\n            <div class=\"row\">\n                <div class=\"col-sm-12 col-md-8 col-md-offset-2\">\n                    <item :item=\"item\"></item>\n                </div>\n            </div>\n        </template>\n\n        <div class=\"page-header\">\n            <h1 class=\"text-center\">seriously take it</h1>\n        </div>\n    </div>\n</template>\n<dibs-modal></dibs-modal>\n";
+	module.exports = "\n<ui-preloader :show=\"$loadingRouteData\"></ui-preloader>\n<template v-if=\"!$loadingRouteData\">\n    <div class=\"container\">\n        <div class=\"page-header\">\n            <h1 class=\"text-center\">hey you take this free stuff</h1>\n        </div>\n\n        <template v-for=\"item in items\">\n            <div class=\"row\">\n                <div class=\"col-sm-12 col-md-8 col-md-offset-2\">\n                    <item :item=\"item\" :has_been_claimed_init=\"claimed_items[item.id]\"></item>\n                </div>\n            </div>\n        </template>\n\n        <div class=\"page-header\">\n            <h1 class=\"text-center\">seriously take it</h1>\n        </div>\n    </div>\n</template>\n<dibs-modal></dibs-modal>\n";
 
 /***/ },
 /* 34 */
