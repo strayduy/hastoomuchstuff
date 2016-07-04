@@ -76,8 +76,6 @@ def claim_item():
     mail = Mail(from_email, subject, to_email, content)
     res = sg.client.mail.send.post(request_body=mail.get())
 
-    return '%d %s' % (res.status_code, res.body)
-
     if res.status_code != 202:
         abort(500)
 
