@@ -14,6 +14,7 @@
                     :value.sync="comments"
                     :multi-line="true"
                     placeholder="(Optional)"
+                    help-text="This info will only be included in an email notification and won't appear anywhere on the site."
         ></ui-textbox>
 
         <div slot="footer">
