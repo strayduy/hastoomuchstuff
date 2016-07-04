@@ -49,7 +49,13 @@ export default {
                 return;
             }
 
-            this.$dispatch('claim-item', this.item);
+            let data = {
+                item: this.item,
+                username: this.username,
+                comments: this.comments,
+            };
+
+            this.$dispatch('claim-item', data);
             this.show_dibs_modal = false;
         },
     },

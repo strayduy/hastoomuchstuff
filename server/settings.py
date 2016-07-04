@@ -7,6 +7,9 @@ class Config(object):
 
     ITEMS_FILE = 'server/items.yaml'
 
+    FROM_EMAIL_ADDRESS = os.getenv('FROM_EMAIL_ADDRESS', '')
+    TO_EMAIL_ADDRESS = os.getenv('TO_EMAIL_ADDRESS', '')
+
 class ProdConfig(Config):
     APP_ENV = 'prod'
 

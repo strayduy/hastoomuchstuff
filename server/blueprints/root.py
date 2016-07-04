@@ -1,9 +1,15 @@
 # Third party libs
+from flask import abort
 from flask import Blueprint
 from flask import current_app
 from flask import jsonify
 from flask import render_template
+from flask import request
 from flask import url_for
+import sendgrid
+from sendgrid.helpers.mail import Content
+from sendgrid.helpers.mail import Email
+from sendgrid.helpers.mail import Mail
 import yaml
 
 # Initialize blueprint
@@ -43,4 +49,29 @@ def items():
     }
 
     return jsonify(**res)
+
+@blueprint.route('/claim-item', methods=['post'])
+def claim_item():
+    item_name = request.form['item_name']
+    username = request.form['username']
+    comments = request.form.get('comments', '')
+
+    if not item_name or not username:
+        abort(400)
+
+    app_config = current_app.config
+    api_key = app_config.get('SENDGRID_API_KEY', '')
+
+    if not api_key:
+        abort(500)
+
+    sg = sendgrid.SendGridAPIClient(apikey=api_key)
+    from_email = Email(app_config['FROM_EMAIL_ADDRESS'], username)
+    to_email = Email(app_config['TO_EMAIL_ADDRESS'])
+    subject = '[DIBS] on %s' % (item_name)
+    content = Content('text/plain', comments)
+    mail = Mail(from_email, subject, to_email, content)
+    res = sg.client.mail.send.post(request_body=mail.get())
+
+    return ''
 

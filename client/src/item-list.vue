@@ -52,9 +52,23 @@ export default {
 
             this.$broadcast('dibs-modal.show', data);
         },
-        'claim-item': function(item) {
+        'claim-item': function(data) {
+            let item = data.item;
+            let username = data.username;
+            let comments = data.comments;
+
             this.claimed_items[item.id] = true;
             this.$broadcast('claim-item', item);
+
+            let post_data = {
+                item_name: item.name,
+                username: username,
+                comments: comments,
+            };
+
+            this.$http.post('/claim-item', post_data, {emulateJSON: true}).then(function success(response) {
+            }, function error(response) {
+            });
         },
     },
     route: {

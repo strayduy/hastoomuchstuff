@@ -3,3 +3,4 @@ Flask-Script
 PyYAML
 gunicorn
 pymongo
+sendgrid
