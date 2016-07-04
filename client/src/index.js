@@ -29,6 +29,11 @@ router.beforeEach(function(transition) {
     transition.next();
 });
 
+// Track client-routed page views with Google Analytics
+router.afterEach(function(transition) {
+    ga('send', {hitType: 'pageview', page: transition.to.path});
+});
+
 // Routes
 router.map({
     '/': {
