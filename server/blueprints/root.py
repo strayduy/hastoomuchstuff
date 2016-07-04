@@ -62,6 +62,10 @@ def claim_item():
     if not item_id or not item_name or not username:
         abort(400)
 
+    # Email body can't be blank
+    if not comments:
+        comments = 'no comments'
+
     app_config = current_app.config
     api_key = app_config.get('SENDGRID_API_KEY', '')
 
