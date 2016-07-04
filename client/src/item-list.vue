@@ -2,6 +2,15 @@
 .page-header {
     border-bottom: none;
 }
+.snackbar-container {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+}
+.ui-snackbar {
+    max-width: inherit;
+}
 </style>
 
 <template>
@@ -26,6 +35,9 @@
         </div>
     </template>
     <dibs-modal></dibs-modal>
+    <div class="snackbar-container">
+        <ui-snackbar-container></ui-snackbar-container>
+    </div>
 </template>
 
 <script>
@@ -68,7 +80,13 @@ export default {
             };
 
             this.$http.post('/claim-item', post_data, {emulateJSON: true}).then(function success(response) {
+                this.$broadcast('ui-snackbar::create', {
+                    message: "Request sent! If you don't hear back in a few days, it's because I'm ignoring you. <3",
+                });
             }, function error(response) {
+                this.$broadcast('ui-snackbar::create', {
+                    message: "Whoops, some wires got crossed. Try that again or message me directly.",
+                });
             });
         },
     },

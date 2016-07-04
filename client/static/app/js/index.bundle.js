@@ -28312,7 +28312,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.page-header {\n    border-bottom: none;\n}\n", ""]);
+	exports.push([module.id, "\n.page-header {\n    border-bottom: none;\n}\n.snackbar-container {\n    bottom: 0;\n    left: 0;\n    position: fixed;\n    width: 100%;\n}\n.ui-snackbar {\n    max-width: inherit;\n}\n", ""]);
 
 	// exports
 
@@ -28595,7 +28595,15 @@
 	                comments: comments
 	            };
 
-	            this.$http.post('/claim-item', post_data, { emulateJSON: true }).then(function success(response) {}, function error(response) {});
+	            this.$http.post('/claim-item', post_data, { emulateJSON: true }).then(function success(response) {
+	                this.$broadcast('ui-snackbar::create', {
+	                    message: "Request sent! If you don't hear back in a few days, it's because I'm ignoring you. <3"
+	                });
+	            }, function error(response) {
+	                this.$broadcast('ui-snackbar::create', {
+	                    message: "Whoops, some wires got crossed. Try that again or message me directly."
+	                });
+	            });
 	        }
 	    },
 	    route: {
@@ -45252,7 +45260,7 @@
 /* 33 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<ui-preloader :show=\"$loadingRouteData\"></ui-preloader>\n<template v-if=\"!$loadingRouteData\">\n    <div class=\"container\">\n        <div class=\"page-header\">\n            <h1 class=\"text-center\">hey you take this free stuff</h1>\n        </div>\n\n        <template v-for=\"item in items\">\n            <div class=\"row\">\n                <div class=\"col-sm-12 col-md-8 col-md-offset-2\">\n                    <item :item=\"item\" :has_been_claimed_init=\"claimed_items[item.id]\"></item>\n                </div>\n            </div>\n        </template>\n\n        <div class=\"page-header\">\n            <h1 class=\"text-center\">seriously take it</h1>\n        </div>\n    </div>\n</template>\n<dibs-modal></dibs-modal>\n";
+	module.exports = "\n<ui-preloader :show=\"$loadingRouteData\"></ui-preloader>\n<template v-if=\"!$loadingRouteData\">\n    <div class=\"container\">\n        <div class=\"page-header\">\n            <h1 class=\"text-center\">hey you take this free stuff</h1>\n        </div>\n\n        <template v-for=\"item in items\">\n            <div class=\"row\">\n                <div class=\"col-sm-12 col-md-8 col-md-offset-2\">\n                    <item :item=\"item\" :has_been_claimed_init=\"claimed_items[item.id]\"></item>\n                </div>\n            </div>\n        </template>\n\n        <div class=\"page-header\">\n            <h1 class=\"text-center\">seriously take it</h1>\n        </div>\n    </div>\n</template>\n<dibs-modal></dibs-modal>\n<div class=\"snackbar-container\">\n    <ui-snackbar-container></ui-snackbar-container>\n</div>\n";
 
 /***/ },
 /* 34 */

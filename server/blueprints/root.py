@@ -76,6 +76,9 @@ def claim_item():
     mail = Mail(from_email, subject, to_email, content)
     res = sg.client.mail.send.post(request_body=mail.get())
 
+    if res.status_code != 202:
+        abort(500)
+
     claimed_items = session.get('claimed_items', {})
     claimed_items[item_id] = True
     session['claimed_items'] = claimed_items
