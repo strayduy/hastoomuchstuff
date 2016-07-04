@@ -5,6 +5,7 @@ from flask import current_app
 from flask import jsonify
 from flask import render_template
 from flask import request
+from flask import session
 from flask import url_for
 import sendgrid
 from sendgrid.helpers.mail import Content
@@ -46,17 +47,19 @@ def items():
 
     res = {
         'items': item_data['items'],
+        'claimed_items': session.get('claimed_items', {}),
     }
 
     return jsonify(**res)
 
 @blueprint.route('/claim-item', methods=['post'])
 def claim_item():
+    item_id = request.form['item_id']
     item_name = request.form['item_name']
     username = request.form['username']
     comments = request.form.get('comments', '')
 
-    if not item_name or not username:
+    if not item_id or not item_name or not username:
         abort(400)
 
     app_config = current_app.config
@@ -72,6 +75,10 @@ def claim_item():
     content = Content('text/plain', comments)
     mail = Mail(from_email, subject, to_email, content)
     res = sg.client.mail.send.post(request_body=mail.get())
+
+    claimed_items = session.get('claimed_items', {})
+    claimed_items[item_id] = True
+    session['claimed_items'] = claimed_items
 
     return ''
 

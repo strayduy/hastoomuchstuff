@@ -100,12 +100,13 @@ const BUTTON_TEXTS = [
 export default {
     props: [
         'item',
+        'has_been_claimed_init',
     ],
     data() {
         return {
             button_text: _.sample(BUTTON_TEXTS),
             is_compiled: false,
-            has_been_claimed: false,
+            has_been_claimed: !!this.has_been_claimed_init,
         };
     },
     methods: {

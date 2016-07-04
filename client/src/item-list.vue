@@ -15,7 +15,7 @@
             <template v-for="item in items">
                 <div class="row">
                     <div class="col-sm-12 col-md-8 col-md-offset-2">
-                        <item :item="item"></item>
+                        <item :item="item" :has_been_claimed_init="claimed_items[item.id]"></item>
                     </div>
                 </div>
             </template>
@@ -61,6 +61,7 @@ export default {
             this.$broadcast('claim-item', item);
 
             let post_data = {
+                item_id: item.id,
                 item_name: item.name,
                 username: username,
                 comments: comments,
@@ -82,6 +83,7 @@ export default {
                 });
 
                 this.items = items;
+                this.claimed_items = response.data.claimed_items;
             }, function error(response) {
             });
         },
