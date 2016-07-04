@@ -7,6 +7,7 @@ class Config(object):
 
     ITEMS_FILE = 'server/items.yaml'
 
+    SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY', '')
     FROM_EMAIL_ADDRESS = os.getenv('FROM_EMAIL_ADDRESS', '')
     TO_EMAIL_ADDRESS = os.getenv('TO_EMAIL_ADDRESS', '')
 
