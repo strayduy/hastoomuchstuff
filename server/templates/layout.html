@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {#
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="{{ url_for('root.favicon', _external=True) }}">
+    #}
+
+    <title>{% block document_title %}hey look free stuff{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {% block css %}
+    {% endblock %}
+  </head>
+  <body v-cloak>
+    {% block content %}
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+  </body>
+</html>

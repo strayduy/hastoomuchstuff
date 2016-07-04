@@ -1,1 +1,9 @@
-hi
+{% extends 'layout.html' %}
+
+{% block content %}
+  <router-view></router-view>
+{% endblock %}
+
+{% block js %}
+  <script src="{{ bundle_url }}"></script>
+{% endblock %}
