@@ -1,12 +1,4 @@
 items:
-    a_duel_betwixt_us:
-        name: "A Duel Betwixt Us"
-        bgg_link: "https://boardgamegeek.com/boardgame/145943/duel-betwixt-us"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/a-duel-betwixt-us.jpg"
-        player_count: "2"
-        game_length: "45 min"
-        complexity: "Medium"
-        description: "Two player card game enacting a duel between a pair of old timey fellows. You probably haven't heard of it."
     agents:
         name: "The Agents"
         bgg_link: "https://boardgamegeek.com/boardgame/141932/agents"
@@ -23,14 +15,6 @@ items:
         game_length: "20 minutes"
         complexity: "Easy"
         description: "Quick bidding/bluffing game that's like For Sale mixed with Love Letter."
-    forbidden_island:
-        name: "Forbidden Island"
-        bgg_link: "https://boardgamegeek.com/boardgame/65244/forbidden-island"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/forbidden-island.jpg"
-        player_count: "2 - 4"
-        game_length: "45 minutes"
-        complexity: "Easy"
-        description: "Co-op game where you're working together to escape a sinking island."
     mutiny:
         name: "Mutiny"
         bgg_link: "https://boardgamegeek.com/boardgame/148461/mutiny"
@@ -39,22 +23,6 @@ items:
         game_length: "20 minutes"
         complexity: "Easy"
         description: "Werewolf-style elimination game where two teams of pirates are trying to poison each other's drinks."
-    one_night_revolution:
-        name: "One Night Revolution"
-        bgg_link: "https://boardgamegeek.com/boardgame/176361/one-night-revolution"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/one-night-revolution.jpg"
-        player_count: "4 - 10"
-        game_length: "15 minutes"
-        complexity: "Medium"
-        description: "A streamlined version of The Resistance in the One Night format."
-    paperback:
-        name: "Paperback"
-        bgg_link: "https://boardgamegeek.com/boardgame/141572/paperback"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/paperback.jpg"
-        player_count: "2 - 5"
-        game_length: "45 minutes"
-        complexity: "Medium"
-        description: "A cross between Dominion and Scrabble. Build a deck of letters to form as many words as you can."
     volt:
         name: "VOLT: Robot Battle Arena"
         bgg_link: "https://boardgamegeek.com/boardgame/143981/volt-robot-battle-arena"
