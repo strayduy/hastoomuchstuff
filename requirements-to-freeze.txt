@@ -1,6 +1,8 @@
 Flask
+Flask-Compress==1.3.0
 Flask-Script
 PyYAML
 gunicorn
 pymongo
 sendgrid
+-e git://github.com/ChrisTM/Flask-CacheBust.git@aa09ad861f104f987928fe9f5107ccfe0e4473c3#egg=Flask_CacheBust-master
