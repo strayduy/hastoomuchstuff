@@ -7,14 +7,6 @@ items:
         game_length: "30 min"
         complexity: "Medium"
         description: "Card game with a \"double-edged\" mechanic. Each card grants two benefits, and you decide which benefit goes to you and which one goes to your opponents."
-    eggs_and_empires:
-        name: "Eggs and Empires"
-        bgg_link: "https://boardgamegeek.com/boardgame/156180/eggs-and-empires"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/eggs-and-empires.jpg"
-        player_count: "2 - 6"
-        game_length: "20 minutes"
-        complexity: "Easy"
-        description: "Quick bidding/bluffing game that's like For Sale mixed with Love Letter."
     mutiny:
         name: "Mutiny"
         bgg_link: "https://boardgamegeek.com/boardgame/148461/mutiny"
@@ -23,6 +15,14 @@ items:
         game_length: "20 minutes"
         complexity: "Easy"
         description: "Werewolf-style elimination game where two teams of pirates are trying to poison each other's drinks."
+    netrunner:
+        name: "Netrunner"
+        bgg_link: "https://boardgamegeek.com/boardgame/124742/android-netrunner"
+        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/netrunner.jpg"
+        player_count: "2"
+        game_length: "30 minutes"
+        complexity: "Hard"
+        description: "Two-player asymmetrical 'living' card game. This is the original base set only."
     volt:
         name: "VOLT: Robot Battle Arena"
         bgg_link: "https://boardgamegeek.com/boardgame/143981/volt-robot-battle-arena"
