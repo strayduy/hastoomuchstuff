@@ -1,20 +1,4 @@
 items:
-    agents:
-        name: "The Agents"
-        bgg_link: "https://boardgamegeek.com/boardgame/141932/agents"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/the-agents.png"
-        player_count: "2 - 5"
-        game_length: "30 min"
-        complexity: "Medium"
-        description: "Card game with a \"double-edged\" mechanic. Each card grants two benefits, and you decide which benefit goes to you and which one goes to your opponents."
-    mutiny:
-        name: "Mutiny"
-        bgg_link: "https://boardgamegeek.com/boardgame/148461/mutiny"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/mutiny.png"
-        player_count: "6 - 18"
-        game_length: "20 minutes"
-        complexity: "Easy"
-        description: "Werewolf-style elimination game where two teams of pirates are trying to poison each other's drinks."
     netrunner:
         name: "Netrunner"
         bgg_link: "https://boardgamegeek.com/boardgame/124742/android-netrunner"
@@ -23,19 +7,3 @@ items:
         game_length: "30 minutes"
         complexity: "Hard"
         description: "Two-player asymmetrical 'living' card game. This is the original base set only."
-    volt:
-        name: "VOLT: Robot Battle Arena"
-        bgg_link: "https://boardgamegeek.com/boardgame/143981/volt-robot-battle-arena"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/volt.jpg"
-        player_count: "2 - 4"
-        game_length: "30 minutes"
-        complexity: "Medium"
-        description: "Basically BattleBots the board game. With more shooting."
-    wits_and_wagers:
-        name: "Wits & Wagers"
-        bgg_link: "https://boardgamegeek.com/boardgame/20100/wits-wagers"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/wits-and-wagers.jpg"
-        player_count: "3 - 7"
-        game_length: "30 minutes"
-        complexity: "Easy"
-        description: "Party game combining trivia with gambling."
