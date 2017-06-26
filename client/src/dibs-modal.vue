@@ -9,13 +9,24 @@
                     :autocomplete="false"
         ></ui-textbox>
 
-        <ui-textbox label="Comments"
-                    name="comments"
-                    :value.sync="comments"
-                    :multi-line="true"
-                    placeholder="(Optional)"
-                    help-text="This info will only be included in an email notification and won't appear anywhere on the site."
-        ></ui-textbox>
+        <template v-if="item.name === 'Scythe'">
+            <ui-textbox label="Comments"
+                        name="comments"
+                        :value.sync="comments"
+                        :multi-line="true"
+                        placeholder="(Insert Zac Efron haiku here)"
+                        help-text="This info will be sent to me in an email and won't appear anywhere on the site. No guarantees that you'll get you ask for, but I'll try to fairly distribute the games in a few days."
+            ></ui-textbox>
+        </template>
+        <template v-if="item.name !== 'Scythe'">
+            <ui-textbox label="Comments"
+                        name="comments"
+                        :value.sync="comments"
+                        :multi-line="true"
+                        placeholder="(Optional)"
+                        help-text="This info will be sent to me in an email and won't appear anywhere on the site. No guarantees that you'll get you ask for, but I'll try to fairly distribute the games in a few days."
+            ></ui-textbox>
+        </template>
 
         <div slot="footer">
             <template v-if="has_been_claimed">
