@@ -54,7 +54,7 @@ items:
         player_count: "7 - 10"
         game_length: "20 minutes"
         complexity: "Easy"
-        description: "Another social deduction game. Seems like a terrible, drawn-out version of Win, Lose, Banana. But I haven't played it so maybe it's great you should take it."
+        description: "Another social deduction game. Seems like a drawn-out version of Win, Lose, Banana. But I haven't played it so maybe it's great you should take it."
     town_aint_big_enough:
         name: "This Town Ain't Big Enough for the 2-4 of Us"
         bgg_link: "https://boardgamegeek.com/boardgame/153497/town-aint-big-enough-2-4-us"
