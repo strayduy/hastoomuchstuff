@@ -14,7 +14,7 @@
                         name="comments"
                         :value.sync="comments"
                         :multi-line="true"
-                        placeholder="(Insert Zac Efron haiku here)"
+                        placeholder="(Insert Nic Cage haiku here)"
                         help-text="This info will be sent to me in an email and won't appear anywhere on the site. No guarantees that you'll get you ask for, but I'll try to fairly distribute the games in a few days."
             ></ui-textbox>
         </template>
