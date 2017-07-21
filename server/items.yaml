@@ -1,12 +1,4 @@
 items:
-    dominant_species:
-        name: "Dominant Species"
-        bgg_link: "https://boardgamegeek.com/boardgame/62219/dominant-species"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/dominant-species.jpg"
-        player_count: "2 - 6"
-        game_length: "3 hours"
-        complexity: "Hard"
-        description: "Asymmetrical combination of worker placement and area control. Ideal if you want a super adversarial Euro game. Or if you just want a game where monkeys fight spiders during an ice age."
     mafia_de_cuba:
         name: "Mafia de Cuba"
         bgg_link: "https://boardgamegeek.com/boardgame/176558/mafia-de-cuba"
@@ -31,14 +23,6 @@ items:
         game_length: "30 minutes"
         complexity: "Hard"
         description: "Two-player asymmetrical 'living' card game. This is the original base set only."
-    scythe:
-        name: "Scythe"
-        bgg_link: "https://boardgamegeek.com/boardgame/169786/scythe"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/scythe.jpg"
-        player_count: "2 - 5"
-        game_length: "2.5 hours"
-        complexity: "Hard"
-        description: "If multiple people want this one, I'll give it to whomever writes the best haiku about their favorite Nic Cage movie."
     settlers:
         name: "Settlers of Catan"
         bgg_link: "https://boardgamegeek.com/boardgame/13/catan"
@@ -63,11 +47,3 @@ items:
         game_length: "15 minutes"
         complexity: "Easy"
         description: "Like a micro version of Carcassone with a Western theme. It also has the best name."
-    two_rooms_and_a_boom:
-        name: "Two Rooms and a Boom"
-        bgg_link: "https://boardgamegeek.com/boardgame/134352/two-rooms-and-boom"
-        thumbnail: "https://s3-us-west-1.amazonaws.com/hastoomuchstuff/two-rooms-and-a-boom.png"
-        player_count: "6 - 30"
-        game_length: "15 minutes"
-        complexity: "Easy"
-        description: "It's a party game! Where the theme is domestic terrorism!"
